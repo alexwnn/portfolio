@@ -1,0 +1,46 @@
+@import "tailwindcss";
+@import "@fontsource/source-code-pro/400.css";
+@import "@fontsource/source-code-pro/500.css";
+@import "@fontsource/source-code-pro/600.css";
+@import "@fontsource/source-code-pro/700.css";
+
+@theme {
+  --color-background: #faf8f3;
+  --color-surface: #ffffff;
+  --color-surface-hover: #f1f6fa;
+  --color-foreground: #1e293b;
+  --color-muted: #64748b;
+  --color-subtle: #94a3b8;
+  --color-border: #dbe5ee;
+  --color-border-strong: #b8cee0;
+  --color-accent: #5a9bbf;
+  --color-accent-soft: #a8d0e6;
+  --font-sans: "Source Code Pro", ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-mono: "Source Code Pro", ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
+  --radius: 0px;
+  --default-radius: 0;
+}
+
+* {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  filter: none;
+}
+
+html,
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  font-feature-settings: "tnum" 1, "calt" 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: var(--color-accent-soft);
+  color: var(--color-foreground);
+}
