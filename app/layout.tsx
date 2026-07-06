@@ -13,8 +13,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full bg-[#faf8f3] text-slate-800">
-      <body className="min-h-full flex flex-col bg-[#faf8f3] text-slate-800 antialiased selection:bg-[#a8d0e6] selection:text-slate-900">
+    <html
+      lang="en"
+      className="h-full bg-background text-ink-800"
+      suppressHydrationWarning
+    >
+      <head>
+        {/* set theme class before paint to avoid a light-mode flash */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{var t=localStorage.getItem("theme");if(t==="dark"||(!t&&matchMedia("(prefers-color-scheme: dark)").matches))document.documentElement.classList.add("dark")}catch(e){}`,
+          }}
+        />
+      </head>
+      <body className="min-h-full flex flex-col text-ink-800 antialiased selection:bg-accent-soft selection:text-ink-900">
         {children}
       </body>
     </html>

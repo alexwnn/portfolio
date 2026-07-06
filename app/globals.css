@@ -4,17 +4,81 @@
 @import "@fontsource/source-code-pro/600.css";
 @import "@fontsource/source-code-pro/700.css";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  color-scheme: light;
+
+  --background: #faf8f3;
+  --surface: #ffffff;
+  --surface-hover: #f1f6fa;
+  --border: #dbe5ee;
+  --border-mid: #cfdce8;
+  --border-strong: #b8cee0;
+
+  --accent: #5a9bbf;
+  --accent-bright: #7eb8d4;
+  --accent-muted: #a8c5d8;
+  --accent-soft: #a8d0e6;
+
+  --ink-900: #0f172a;
+  --ink-800: #1e293b;
+  --ink-700: #334155;
+  --ink-600: #475569;
+  --ink-500: #64748b;
+  --ink-400: #94a3b8;
+
+  /* halftone smoke dots: color + max opacity */
+  --smoke-dot: 90 123 148;
+  --smoke-alpha: 0.28;
+}
+
+.dark {
+  color-scheme: dark;
+
+  --background: #0a0d10;
+  --surface: #10151b;
+  --surface-hover: #161e26;
+  --border: #1f2933;
+  --border-mid: #2a3845;
+  --border-strong: #35485a;
+
+  --accent: #7eb8d4;
+  --accent-bright: #9ecfe6;
+  --accent-muted: #4f7893;
+  --accent-soft: #2e4d63;
+
+  --ink-900: #f1f5f9;
+  --ink-800: #e2e8f0;
+  --ink-700: #cbd5e1;
+  --ink-600: #aebccb;
+  --ink-500: #8a9bab;
+  --ink-400: #64748b;
+
+  --smoke-dot: 214 228 238;
+  --smoke-alpha: 0.5;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-border: var(--border);
+  --color-border-mid: var(--border-mid);
+  --color-border-strong: var(--border-strong);
+  --color-accent: var(--accent);
+  --color-accent-bright: var(--accent-bright);
+  --color-accent-muted: var(--accent-muted);
+  --color-accent-soft: var(--accent-soft);
+  --color-ink-900: var(--ink-900);
+  --color-ink-800: var(--ink-800);
+  --color-ink-700: var(--ink-700);
+  --color-ink-600: var(--ink-600);
+  --color-ink-500: var(--ink-500);
+  --color-ink-400: var(--ink-400);
+}
+
 @theme {
-  --color-background: #faf8f3;
-  --color-surface: #ffffff;
-  --color-surface-hover: #f1f6fa;
-  --color-foreground: #1e293b;
-  --color-muted: #64748b;
-  --color-subtle: #94a3b8;
-  --color-border: #dbe5ee;
-  --color-border-strong: #b8cee0;
-  --color-accent: #5a9bbf;
-  --color-accent-soft: #a8d0e6;
   --font-sans: "Source Code Pro", ui-monospace, SFMono-Regular, Menlo, Monaco,
     Consolas, "Liberation Mono", "Courier New", monospace;
   --font-mono: "Source Code Pro", ui-monospace, SFMono-Regular, Menlo, Monaco,
@@ -30,10 +94,15 @@
   filter: none;
 }
 
+/* page background lives on html only — body stays transparent so the
+   fixed -z-10 smoke layer can show through behind all sections */
+html {
+  background-color: var(--background);
+}
+
 html,
 body {
-  background-color: var(--color-background);
-  color: var(--color-foreground);
+  color: var(--ink-800);
   font-family: var(--font-sans);
   font-feature-settings: "tnum" 1, "calt" 0;
   -webkit-font-smoothing: antialiased;
@@ -41,6 +110,51 @@ body {
 }
 
 ::selection {
-  background-color: var(--color-accent-soft);
-  color: var(--color-foreground);
+  background-color: var(--accent-soft);
+  color: var(--ink-900);
+}
+
+/* blur-roll caption flip (RoleFlipper) */
+.role-flip {
+  display: inline-block;
+}
+
+.role-flip[data-phase="in"] {
+  animation: role-in 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.role-flip[data-phase="out"] {
+  animation: role-out 0.3s cubic-bezier(0.55, 0, 0.55, 0.2) both;
+}
+
+@keyframes role-in {
+  from {
+    opacity: 0;
+    transform: translateY(50%);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes role-out {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-50%);
+    filter: blur(6px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .role-flip[data-phase] {
+    animation: none;
+  }
 }
