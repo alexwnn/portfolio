@@ -1,3 +1,4 @@
+import { ChevronRight } from "lucide-react";
 import { experience } from "@/lib/data";
 
 export default function Experience() {
@@ -22,64 +23,59 @@ export default function Experience() {
           </p>
         </header>
 
-        <div className="mt-px overflow-x-auto border border-[#dbe5ee] bg-white">
-          <table className="w-full border-collapse text-left text-sm tabular-nums">
-            <thead>
-              <tr className="border-b border-[#dbe5ee] text-[0.65rem] uppercase tracking-[0.28em] text-slate-400">
-                <th
-                  scope="col"
-                  className="w-12 px-4 py-3 text-left font-normal sm:px-6"
-                >
-                  ID
-                </th>
-                <th
-                  scope="col"
-                  className="px-4 py-3 text-left font-normal sm:px-6"
-                >
-                  Role
-                </th>
-                <th
-                  scope="col"
-                  className="hidden px-4 py-3 text-left font-normal sm:table-cell sm:px-6"
-                >
-                  Organization
-                </th>
-                <th
-                  scope="col"
-                  className="px-4 py-3 text-right font-normal sm:px-6"
-                >
-                  Period
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {experience.map((entry, idx) => (
-                <tr
-                  key={`${entry.role}-${idx}`}
-                  className="group border-b border-[#dbe5ee] last:border-b-0 transition-colors hover:bg-[#f1f6fa]"
-                >
-                  <td className="px-4 py-5 align-top text-[0.7rem] uppercase tracking-[0.22em] text-slate-400 sm:px-6">
-                    {String(idx + 1).padStart(2, "0")}
-                  </td>
-                  <td className="px-4 py-5 align-top text-slate-800 sm:px-6">
-                    <div className="text-sm font-medium uppercase tracking-[0.12em] transition-colors group-hover:text-[#5a9bbf]">
-                      {entry.role}
-                    </div>
-                    <div className="mt-1 text-xs text-slate-500 sm:hidden">
-                      {entry.org}
-                    </div>
-                  </td>
-                  <td className="hidden px-4 py-5 align-top text-slate-500 sm:table-cell sm:px-6">
-                    {entry.org}
-                  </td>
-                  <td className="px-4 py-5 text-right align-top text-xs uppercase tracking-[0.18em] text-slate-500 sm:px-6">
-                    {entry.period}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        <ol className="mt-px flex flex-col gap-px border border-[#dbe5ee] bg-[#dbe5ee]">
+          {experience.map((entry, idx) => (
+            <li
+              key={`${entry.role}-${idx}`}
+              className="group bg-white p-6 transition-colors hover:bg-[#f1f6fa] sm:p-8"
+            >
+              <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
+                <div className="lg:col-span-4">
+                  <div className="flex items-center gap-3">
+                    <span className="text-[0.7rem] uppercase tracking-[0.22em] text-slate-400">
+                      {String(idx + 1).padStart(2, "0")}
+                    </span>
+                    <span className="h-px flex-1 bg-[#dbe5ee]" />
+                  </div>
+                  <h3 className="mt-4 text-base font-semibold uppercase tracking-[0.08em] text-slate-900 transition-colors group-hover:text-[#5a9bbf]">
+                    {entry.role}
+                  </h3>
+                  <p className="mt-2 text-sm text-slate-500">{entry.org}</p>
+                  <p className="mt-1 text-[0.7rem] uppercase tracking-[0.18em] text-slate-400">
+                    {entry.location} · {entry.period}
+                  </p>
+                </div>
+
+                <div className="lg:col-span-8">
+                  <ul className="space-y-2.5">
+                    {entry.highlights.map((highlight, hIdx) => (
+                      <li
+                        key={hIdx}
+                        className="flex items-start gap-2.5 text-sm leading-relaxed text-slate-600"
+                      >
+                        <ChevronRight
+                          aria-hidden
+                          className="mt-1 h-3.5 w-3.5 shrink-0 text-[#a8c5d8]"
+                        />
+                        <span>{highlight}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <ul className="mt-5 flex flex-wrap gap-2">
+                    {entry.tags.map((tag) => (
+                      <li
+                        key={tag}
+                        className="border border-[#dbe5ee] px-2 py-1 text-[0.65rem] uppercase tracking-[0.14em] text-slate-500"
+                      >
+                        {tag}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </li>
+          ))}
+        </ol>
       </div>
     </section>
   );

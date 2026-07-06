@@ -2,6 +2,8 @@ import NavBar from "@/components/NavBar";
 import Hero from "@/components/Hero";
 import ProjectGrid from "@/components/ProjectGrid";
 import Experience from "@/components/Experience";
+import Skills from "@/components/Skills";
+import Distinctions from "@/components/Distinctions";
 
 export default function Home() {
   return (
@@ -11,6 +13,8 @@ export default function Home() {
         <Hero />
         <ProjectGrid />
         <Experience />
+        <Skills />
+        <Distinctions />
       </main>
       <footer className="border-t border-[#dbe5ee]">
         <div className="mx-auto flex w-full max-w-6xl flex-col items-start justify-between gap-2 px-6 py-6 text-[0.65rem] uppercase tracking-[0.3em] text-slate-400 sm:flex-row sm:items-center sm:px-10">

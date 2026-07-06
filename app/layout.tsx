@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "ALEX NGUYEN // SOFTWARE ENGINEER",
   description:
-    "Engineering portfolio of Alex Nguyen — Computing Sciences at PLU. Full-stack web architecture, systems logic, and real-time platforms.",
+    "Portfolio of Alex Nguyen — B.S. Computer Science at PLU (GPA 3.9). Full-stack web platforms, mobile apps, real-time systems, and human-robot interaction research.",
 };
 
 export default function RootLayout({
