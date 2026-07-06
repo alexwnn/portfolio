@@ -11,7 +11,7 @@ export default function Distinctions() {
       <div className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-10 sm:py-24">
         <header className="flex flex-col gap-2 border-b border-border pb-6 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="text-[0.65rem] uppercase tracking-[0.22em] text-ink-400 sm:text-[0.7rem] sm:tracking-[0.3em]">
+            <p className="text-[0.65rem] uppercase tracking-[0.22em] text-ink-900 sm:text-[0.7rem] sm:tracking-[0.3em]">
               {"// 05 — Distinctions"}
             </p>
             <h2 className="mt-2 text-xl font-semibold tracking-tight text-ink-900 sm:text-3xl">

@@ -158,3 +158,34 @@ body {
     animation: none;
   }
 }
+
+/* conveyor-belt skill marquee (Skills section) */
+.marquee {
+  overflow: hidden;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll var(--marquee-duration, 24s) linear infinite;
+}
+
+/* four identical copies in the track; shifting one copy width (25%) loops seamlessly */
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-25%);
+  }
+}
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}

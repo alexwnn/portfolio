@@ -1,4 +1,5 @@
 import Link from "next/link";
+import RoleFlipper from "@/components/RoleFlipper";
 import ThemeToggle from "@/components/ThemeToggle";
 import { social } from "@/lib/data";
 
@@ -24,7 +25,7 @@ export default function NavBar() {
           </span>
           <span className="hidden text-ink-400 sm:inline">{"//"}</span>
           <span className="hidden text-ink-500 sm:inline">
-            {social.title}
+            <RoleFlipper />
           </span>
         </Link>
 

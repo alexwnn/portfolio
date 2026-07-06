@@ -74,7 +74,7 @@ export const bioSections: BioSection[] = [
   },
   {
     header: "WHEN I'M NOT LOCKED IN",
-    rows: [{ label: "", value: "Video Games, Pickleball, Gym" }],
+    rows: [{ label: "", value: "Movies, Video Games, Pickleball, Gym" }],
   },
 ];
 
