@@ -12,7 +12,7 @@ export default function Experience() {
         <header className="flex flex-col gap-2 border-b border-border pb-6 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="text-[0.65rem] uppercase tracking-[0.22em] text-ink-900 sm:text-[0.7rem] sm:tracking-[0.3em]">
-              {"// 03 — Chronological Log"}
+              {"// 03 — Work"}
             </p>
             <h2 className="mt-2 text-xl font-semibold tracking-tight text-ink-900 sm:text-3xl">
               EXPERIENCE

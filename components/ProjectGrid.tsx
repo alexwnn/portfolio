@@ -1,4 +1,4 @@
-import { ArrowUpRight, Code2, ExternalLink } from "lucide-react";
+import { ArrowUpRight, Code2, ExternalLink, Smartphone } from "lucide-react";
 import ProjectHighlights from "@/components/ProjectHighlights";
 import { projects } from "@/lib/data";
 
@@ -13,7 +13,7 @@ export default function ProjectGrid() {
         <header className="flex flex-col gap-2 border-b border-border pb-6 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="text-[0.65rem] uppercase tracking-[0.22em] text-ink-900 sm:text-[0.7rem] sm:tracking-[0.3em]">
-              {"// 02 — Selected Work"}
+              {"// 02 — Built"}
             </p>
             <h2 className="mt-2 text-xl font-semibold tracking-tight text-ink-900 sm:text-3xl">
               PROJECTS
@@ -81,7 +81,18 @@ export default function ProjectGrid() {
                 ))}
               </ul>
 
-              <div className="mt-auto flex items-center gap-2 pt-8">
+              <div className="mt-auto flex flex-wrap items-center gap-2 pt-8">
+                {project.appStoreUrl && (
+                  <a
+                    href={project.appStoreUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 border border-border-mid px-3 py-2 text-[0.7rem] uppercase tracking-[0.22em] text-ink-600 transition-colors hover:border-accent hover:text-accent"
+                  >
+                    <Smartphone aria-hidden className="h-3.5 w-3.5" />
+                    [ APP STORE ]
+                  </a>
+                )}
                 <a
                   href={project.liveUrl ?? "#"}
                   target={project.liveUrl ? "_blank" : undefined}

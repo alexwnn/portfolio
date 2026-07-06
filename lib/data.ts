@@ -16,6 +16,7 @@ export type Project = {
   highlights: string[];
   stack: string[];
   metric?: { value: string; label: string };
+  appStoreUrl?: string;
   liveUrl?: string;
   codeUrl?: string;
 };
@@ -92,7 +93,7 @@ export const projects: Project[] = [
     tagline: "Full-Stack Social Fitness Platform",
     role: "Full-Stack Software Engineer",
     description:
-      "A cross-platform mobile fitness app live on the App Store with a 150+ user community, built around social workout tracking and high-performance native UX.",
+      "A production fitness app live on the App Store with a 150+ user community, built around social workout tracking.",
     highlights: [
       "Shipped REST API feature sets across a Spring Boot backend — account privacy controls, user blocking, and a calorie tracker seeded from USDA FoodData Central nutrition data.",
       "Traced and fixed critical React Navigation v8 state bugs to keep scroll position stable across deeply nested native stacks.",
@@ -107,6 +108,8 @@ export const projects: Project[] = [
       "AWS",
     ],
     metric: { value: "150+", label: "USERS" },
+    appStoreUrl:
+      "https://apps.apple.com/us/app/gear-workout-tracker-gym-log/id6756771550",
     liveUrl: "https://gearfitness.app",
     codeUrl: "https://github.com/gear-fitness/gear-fitness-app",
   },
@@ -116,7 +119,7 @@ export const projects: Project[] = [
     tagline: "Real-Time Collaborative Tracker",
     role: "Lead Developer",
     description:
-      "A zero-auth, multiplayer dashboard for co-op Nuzlocke runs — a single shared source of truth that several players read and edit at once.",
+      "A zero-auth, multiplayer dashboard for co-op Pokemon Nuzlocke runs — a single shared source of truth that several players read and edit at once.",
     highlights: [
       "Engineered a live synchronization engine on Supabase Realtime holding sub-100ms latency across concurrent editors.",
       "Scaled WebSocket fan-out for high-volume concurrent sessions; the launch drove 16,000+ organic impressions.",
