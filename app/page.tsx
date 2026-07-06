@@ -4,6 +4,7 @@ import ProjectGrid from "@/components/ProjectGrid";
 import Experience from "@/components/Experience";
 import Skills from "@/components/Skills";
 import Distinctions from "@/components/Distinctions";
+import Contact from "@/components/Contact";
 import SmokeBackdrop from "@/components/SmokeBackdrop";
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
         <Experience />
         <Skills />
         <Distinctions />
+        <Contact />
       </main>
       <footer className="border-t border-border">
         <div className="mx-auto flex w-full max-w-6xl flex-col items-start justify-between gap-2 px-4 py-5 text-[0.6rem] uppercase tracking-[0.2em] text-ink-400 sm:flex-row sm:items-center sm:px-10 sm:py-6 sm:text-[0.65rem] sm:tracking-[0.3em]">

@@ -92,7 +92,7 @@ export const projects: Project[] = [
     tagline: "Full-Stack Social Fitness Platform",
     role: "Full-Stack Software Engineer",
     description:
-      "A cross-platform mobile fitness app live on the App Store with a 100+ user community, built around social workout tracking and high-performance native UX.",
+      "A cross-platform mobile fitness app live on the App Store with a 150+ user community, built around social workout tracking and high-performance native UX.",
     highlights: [
       "Shipped REST API feature sets across a Spring Boot backend — account privacy controls, user blocking, and a calorie tracker seeded from USDA FoodData Central nutrition data.",
       "Traced and fixed critical React Navigation v8 state bugs to keep scroll position stable across deeply nested native stacks.",
@@ -106,7 +106,7 @@ export const projects: Project[] = [
       "PostgreSQL",
       "AWS",
     ],
-    metric: { value: "100+", label: "USERS" },
+    metric: { value: "150+", label: "USERS" },
     liveUrl: "https://gearfitness.app",
     codeUrl: "https://github.com/gear-fitness/gear-fitness-app",
   },
@@ -229,7 +229,8 @@ export const coursework = [
 export const social = {
   github: "https://github.com/alexwnn",
   linkedin: "https://www.linkedin.com/in/alexhngu",
-  email: "mailto:nguyena@plu.edu",
+  email: "mailto:alexhngu@gmail.com",
+  x: "https://x.com/alexwnns",
   name: "ALEX NGUYEN",
   title: "SOFTWARE ENGINEER",
 };

@@ -7,8 +7,7 @@ const LINKS: { label: string; href: string }[] = [
   { label: "PROJECTS", href: "#projects" },
   { label: "EXP", href: "#experience" },
   { label: "STACK", href: "#skills" },
-  { label: "GITHUB", href: social.github },
-  { label: "LINKEDIN", href: social.linkedin },
+  { label: "CONTACT", href: "#contact" },
 ];
 
 export default function NavBar() {
