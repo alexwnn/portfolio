@@ -122,11 +122,11 @@ export const projects: Project[] = [
       "A zero-auth, multiplayer dashboard for co-op Pokemon Nuzlocke runs — a single shared source of truth that several players read and edit at once.",
     highlights: [
       "Engineered a live synchronization engine on Supabase Realtime holding sub-100ms latency across concurrent editors.",
-      "Scaled WebSocket fan-out for high-volume concurrent sessions; the launch drove 16,000+ organic impressions.",
+      "Scaled WebSocket fan-out for high-volume concurrent sessions; the launch drove 31,000+ organic impressions.",
       "Built drag-and-drop rosters with @dnd-kit and a dual-type defensive weakness matrix for instant matchup reads.",
     ],
     stack: ["Next.js 15", "TypeScript", "Supabase", "Tailwind CSS", "@dnd-kit"],
-    metric: { value: "16K+", label: "IMPRESSIONS" },
+    metric: { value: "31K+", label: "IMPRESSIONS" },
     liveUrl: "https://nuzl.vercel.app",
     codeUrl: "https://github.com/alexwnn/Nuzl",
   },
